@@ -1,5 +1,7 @@
 package com.ecodeup.api.apirest.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,10 @@ public class EstudianteService {
 		
 		estudiantesRepository.save(estudiante);
 		
+	}
+	
+	public List<Estudiante> obtenerTodos(){
+		return estudiantesRepository.findAll();
 	}
 
 }

@@ -46,5 +46,10 @@ public class EstudiantesController {
 		estudianteServices.guardar(estudiante);
 		return estudiante;
 	}
+	
+	@GetMapping("api/estudiantes")
+	public List<Estudiante> obtener(){
+		return estudianteServices.obtenerTodos();
+	}
 
 }
