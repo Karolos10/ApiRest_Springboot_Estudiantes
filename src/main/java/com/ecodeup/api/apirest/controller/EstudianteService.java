@@ -22,5 +22,9 @@ public class EstudianteService {
 	public List<Estudiante> obtenerTodos(){
 		return estudiantesRepository.findAll();
 	}
+	
+	public Estudiante obtenerEstudiante(Integer id) {
+		return estudiantesRepository.getOne(id);
+	}
 
 }
