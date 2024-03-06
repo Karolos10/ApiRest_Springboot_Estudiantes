@@ -3,13 +3,19 @@ package com.ecodeup.api.apirest.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecodeup.api.apirest.model.Estudiante;
 
 @RestController
 public class EstudiantesController {
+	
+	@Autowired
+	private EstudianteService estudianteServices;
 	
 	@GetMapping("api/estudiante")
 	public List<Estudiante> obtenerEstudiantes(){
@@ -33,6 +39,12 @@ public class EstudiantesController {
 		ListaEstudiantes.add(e1);
 		
 		return ListaEstudiantes;
+	}
+	
+	@PostMapping("api/estudiante")
+	public Estudiante guardarEstudiante(@RequestBody Estudiante estudiante ) {
+		estudianteServices.guardar(estudiante);
+		return estudiante;
 	}
 
 }
