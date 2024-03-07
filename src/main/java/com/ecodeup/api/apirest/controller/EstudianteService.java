@@ -26,5 +26,9 @@ public class EstudianteService {
 	public Estudiante obtenerEstudiante(Integer id) {
 		return estudiantesRepository.getOne(id);
 	}
+	
+	public void actualizar (Estudiante estudiante) {
+		estudiantesRepository.save(estudiante);
+	}
 
 }
