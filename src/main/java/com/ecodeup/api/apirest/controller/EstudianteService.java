@@ -30,5 +30,9 @@ public class EstudianteService {
 	public void actualizar (Estudiante estudiante) {
 		estudiantesRepository.save(estudiante);
 	}
+	
+	public void eliminar(Integer id) {
+		estudiantesRepository.deleteById(id);
+	}
 
 }
